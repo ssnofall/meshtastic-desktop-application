@@ -39,7 +39,7 @@ The primary goal of this project is to provide a full-featured, offline-capable 
 ### Installation
 
 ```bash
-git clone https://github.com/axlixr/meshtastic-desktop-application.git
+git clone https://github.com/ssnofall/meshtastic-desktop-application.git
 cd meshtastic-desktop-application
 ```
 ```bash
