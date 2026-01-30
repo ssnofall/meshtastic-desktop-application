@@ -14,7 +14,7 @@ def create_node_info_tab(page: ft.Page):
     def load_node_info(e=None):
         node_info_container.content.controls.clear()
         node_info_container.content.controls.append(
-            ft.Text("Loading...", size=16, color=ft.Colors.GREY_400)
+            ft.Text("Loading...", size=16, bgcolor=ft.Colors.GREY_400)
         )
         page.update()
         try:
@@ -40,7 +40,7 @@ def create_node_info_tab(page: ft.Page):
                         padding=15
                     ),
                     elevation=3,
-                    color=ft.Colors.BLUE_400,
+                    bgcolor=ft.Colors.BLUE_400,
                     margin=ft.margin.only(bottom=15)
                 )
             )

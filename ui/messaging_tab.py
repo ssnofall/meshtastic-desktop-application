@@ -71,7 +71,7 @@ def create_messaging_tab(page: ft.Page):
         chat_header = ft.Container(
             content=ft.Row([
                 ft.TextButton(
-                    text="← Back",
+                    content="← Back",
                     tooltip="Back to contacts",
                     on_click=lambda _e: show_contacts_view()
                 ),
@@ -89,7 +89,7 @@ def create_messaging_tab(page: ft.Page):
             content=ft.Row([
                 chat_message_input,
                 ft.ElevatedButton(
-                    text="Send",
+                    content="Send",
                     tooltip="Send message",
                     on_click=lambda _e: send_chat_message(),
                     bgcolor=ft.Colors.BLUE_600,
@@ -193,13 +193,34 @@ def create_messaging_tab(page: ft.Page):
     direct_messages_subtab = direct_messages_view
 
     messaging_subtabs = ft.Tabs(
-        selected_index=0,
-        expand=True,
-        tabs=[
-            ft.Tab(text="Channels", content=channels_subtab),
-            ft.Tab(text="Direct Messages", content=direct_messages_subtab)
-        ]
-    )
+            selected_index=0,
+            length=2,
+            expand=True,
+            content=ft.Column(
+                expand=True,
+                controls=[
+                    ft.TabBar(
+                        tabs=[
+                            ft.Tab(label="Channels"),
+                            ft.Tab(label="Direct Messages"),
+                        ]
+                    ),
+                    ft.TabBarView(
+                        expand=True,
+                        controls=[
+                            ft.Container(
+                                content=channels_subtab,
+                                alignment=ft.Alignment.CENTER
+                            ),
+                            ft.Container(
+                                content=direct_messages_subtab,
+                                alignment=ft.Alignment.CENTER,
+                            )
+                        ],
+                    ),
+                ],
+            ),
+        )
 
     def refresh_messaging():
         """Refresh messaging tab - reload contacts"""
