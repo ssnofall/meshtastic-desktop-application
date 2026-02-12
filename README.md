@@ -78,3 +78,9 @@ python main.py
 ## License
 
 This project is licensed under the GNU General Public License
+
+---
+
+## Authors
+- [snofall](https://github.com/ssnofall)
+- [WAPEETY](https://github.com/WAPEETY)
